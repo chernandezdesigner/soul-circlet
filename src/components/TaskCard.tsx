@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Task } from "@/types";
-import { Run, Water } from "lucide-react";
+import { Droplets, Running } from "lucide-react";
 
 interface TaskCardProps {
   task: Task;
@@ -35,9 +35,9 @@ const TaskCard = ({ task, onComplete, onUpdate }: TaskCardProps) => {
   const getIcon = () => {
     switch (task.icon) {
       case 'water':
-        return <Water className="h-6 w-6 text-body" />;
+        return <Droplets className="h-6 w-6 text-body" />;
       case 'run':
-        return <Run className="h-6 w-6 text-body" />;
+        return <Running className="h-6 w-6 text-body" />;
       default:
         return null;
     }

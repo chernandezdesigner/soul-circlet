@@ -1,10 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 40% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -35,19 +36,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -97,5 +91,51 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .task-card {
+    @apply relative bg-white rounded-xl p-4 shadow-sm border border-gray-100 min-w-[160px] transition-all duration-300 ease-in-out hover:shadow-md;
+  }
+  
+  .tab-button {
+    @apply relative px-6 py-2 text-sm font-medium transition-all duration-200 rounded-full;
+  }
+  
+  .tab-button.active {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .day-selector {
+    @apply flex items-center justify-center w-10 h-10 rounded-full text-sm font-medium transition-all duration-200;
+  }
+  
+  .day-selector.active {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .progress-ring-circle {
+    @apply transition-all duration-700 ease-in-out;
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg);
+  }
+  
+  .progress-ring-track {
+    @apply stroke-gray-200;
+  }
+  
+  .progress-ring-body {
+    @apply stroke-body;
+  }
+  
+  .progress-ring-mind {
+    @apply stroke-mind;
+  }
+  
+  .progress-ring-soul {
+    @apply stroke-soul;
   }
 }
